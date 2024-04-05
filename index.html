@@ -59,14 +59,16 @@
         document.getElementById('copyButton').disabled = false;
     }
 
-        function copyToClipboard() {
-            var dataUrl = document.getElementById('dataUrl').innerText;
-            navigator.clipboard.writeText(dataUrl).then(function() {
-                alert('Data URL copied to clipboard!');
-            }, function(err) {
-                console.error('Failed to copy: ', err);
-            });
-        }
+    function copyToClipboard() {
+        var dataUrl = document.getElementById('dataUrl').innerText;
+        var tempInput = document.createElement('input');
+        tempInput.value = dataUrl;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        alert('Data URL copied to clipboard!');
+    }
     </script>
 </body>
 </html>
