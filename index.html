@@ -38,16 +38,23 @@
         #copyButton {
             margin-top: 10px;
         }
+        .data-url-container {
+            max-width: 100%; /* Allow the container to grow with its parent */
+            overflow-x: auto; /* Enable horizontal scrolling if needed */
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Data URL Generator</h1>
-        <p>Enter your HTML code below:</p>
-        <textarea id="htmlCode" oninput="generateDataUrl()"></textarea>
-        <p id="dataUrl"></p>
-        <button id="copyButton" onclick="copyToClipboard()" disabled>Copy to Clipboard</button>
+<div class="container">
+    <h1>Data URL Generator</h1>
+    <p>Enter your HTML code below:</p>
+    <textarea id="htmlCode" oninput="generateDataUrl()"></textarea>
+    <!-- Added a container for the data URL -->
+    <div class="data-url-container">
+        <p id="dataUrl" class="data-url"></p>
     </div>
+    <button id="copyButton" onclick="copyToClipboard()" disabled>Copy to Clipboard</button>
+</div>
 
     <script>
     function generateDataUrl() {
