@@ -50,13 +50,14 @@
     </div>
 
     <script>
-        function generateDataUrl() {
-            var htmlCode = document.getElementById('htmlCode').value;
-            var dataUrl = 'data:text/html;charset=utf-8;base64,' + btoa(htmlCode);
-            document.getElementById('dataUrl').innerText = dataUrl;
-            // Ensure copy button is enabled after generating data URL
-            document.getElementById('copyButton').disabled = false;
-        }
+    function generateDataUrl() {
+        var htmlCode = document.getElementById('htmlCode').value;
+        var encodedHtml = encodeURIComponent(htmlCode);
+        var dataUrl = 'data:text/html;charset=utf-8,' + encodedHtml;
+        document.getElementById('dataUrl').innerText = dataUrl;
+        // Ensure copy button is enabled after generating data URL
+        document.getElementById('copyButton').disabled = false;
+    }
 
         function copyToClipboard() {
             var dataUrl = document.getElementById('dataUrl').innerText;
