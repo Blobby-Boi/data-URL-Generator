@@ -1,4 +1,4 @@
-# https://bIobby-boi.github.io/data-URL-Generator/
+# https://blobby-boi.github.io/data-URL-Generator/
 ## Data URL Generator
 Generates data: links that contain html. These links are not gonna get blocked.
 
